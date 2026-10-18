@@ -1,0 +1,43 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+if (PHP_SAPI !== 'cli') {
+    fwrite(STDERR, "prod-deploy must be run from the command line.\n");
+    exit(1);
+}
+
+$candidates = [];
+
+if (! empty($GLOBALS['_composer_autoload_path'])) {
+    $candidates[] = $GLOBALS['_composer_autoload_path'];
+}
+
+$candidates[] = __DIR__.'/../vendor/autoload.php';
+
+$dir = __DIR__;
+for ($i = 0; $i < 8; $i++) {
+    $dir = dirname($dir);
+    $candidates[] = $dir.'/vendor/autoload.php';
+    $candidates[] = $dir.'/autoload.php';
+}
+
+$autoload = null;
+foreach ($candidates as $candidate) {
+    if (is_string($candidate) && is_file($candidate)) {
+        $autoload = $candidate;
+        break;
+    }
+}
+
+if ($autoload === null) {
+    fwrite(STDERR, "Could not find Composer autoload. Run composer install in this package, or install it with composer require --dev.\n");
+    exit(1);
+}
+
+require $autoload;
+
+use Dhirimetaa\ProdDeploy\Console\Cli;
+
+exit(Cli::run($argv));

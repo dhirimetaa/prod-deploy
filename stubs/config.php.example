@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Optional overrides. Return only the keys you want to change.
+ */
+return [
+    // 'prodfiles_dir' => 'prodfiles',
+    // 'config_dir' => 'deploy',
+
+    // Run in the project root before files are copied. Null skips it.
+    // 'prebuild' => ['npm', 'run', 'build'],
+
+    // Run inside the staging folder after the copy. Null skips it.
+    // 'postbuild' => ['composer', 'install', '--no-dev', '--optimize-autoloader'],
+
+    // These top-level folders are left out of `push` and uploaded with `bundle:zip-push`.
+    // Remove them from deploy/exclude-build.txt if they should be copied into staging.
+    // 'bundle_dirs' => ['vendor'],
+
+    // Relative paths that must exist in the staging folder after build.
+    // 'verify_after_build' => ['index.html'],
+];

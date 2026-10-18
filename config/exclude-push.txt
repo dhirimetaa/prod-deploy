@@ -1,0 +1,13 @@
+# Present in the staging folder, but never uploaded.
+# Use this for files the server already owns (live env, uploads, logs).
+
+.env
+.env.*
+!.env.example
+
+storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+uploads/
+public/uploads/

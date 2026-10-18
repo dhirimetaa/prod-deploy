@@ -1,0 +1,44 @@
+{
+    "name": "dhirimetaa/prod-deploy",
+    "description": "Stage a local project folder and deploy it to cPanel or any SSH/SFTP host (Windows-friendly, not tied to a framework)",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "homepage": "https://github.com/dhirimetaa/prod-deploy",
+    "support": {
+        "issues": "https://github.com/dhirimetaa/prod-deploy/issues",
+        "source": "https://github.com/dhirimetaa/prod-deploy"
+    },
+    "authors": [
+        {
+            "name": "dhirimetaa",
+            "homepage": "https://github.com/dhirimetaa"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-zip": "*",
+        "phpseclib/phpseclib": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "bin": [
+        "bin/prod-deploy"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dhirimetaa\\ProdDeploy\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dhirimetaa\\ProdDeploy\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

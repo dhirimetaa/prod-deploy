@@ -1,0 +1,27 @@
+# Never copy these into the staging folder (prodfiles/).
+# Patterns match the path relative to the project root.
+# A trailing slash matches that directory and everything inside it.
+
+.git/
+.github/
+.cursor/
+.idea/
+.vscode/
+node_modules/
+vendor/
+prodfiles/
+deploy/
+tests/
+coverage/
+
+# Secrets stay on your machine. Ship .env.example if you have one.
+.env
+.env.*
+!.env.example
+
+# Local junk
+*.log
+.DS_Store
+Thumbs.db
+phpunit.xml
+phpunit.xml.dist

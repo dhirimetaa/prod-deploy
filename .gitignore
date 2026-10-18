@@ -1,0 +1,11 @@
+/vendor/
+/.phpunit.cache/
+/prodfiles/
+/deploy/deploy.env
+/deploy/.push-manifest.json
+/deploy/.build-manifest.json
+/deploy/*.zip
+composer.phar
+.idea/
+.vscode/
+*.log
